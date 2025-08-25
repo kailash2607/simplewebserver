@@ -36,6 +36,7 @@ Start the server script and check for errors.
 Open a browser and navigate to http://127.0.0.1:8000 (or the assigned port).
 
 ## PROGRAM:
+```python
 from http.server import HTTPServer, BaseHTTPRequestHandler
 
 content = '''
@@ -108,7 +109,7 @@ print("This is my webserver")
 server_address = ('', 8000)
 httpd = HTTPServer(server_address, MyServer)
 httpd.serve_forever()
-
+```
 
 ## OUTPUT:
 <img width="1918" height="1078" alt="image" src="https://github.com/user-attachments/assets/c05ba43e-54da-4850-b074-5cda15237971" />

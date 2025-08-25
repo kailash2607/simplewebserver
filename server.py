@@ -5,9 +5,30 @@ content = '''
 <html>
 <head>
 <title> Table Name</title>
+<style>
+  table {
+    border-collapse: collapse;
+    width: 60%;
+    margin: 50px auto;
+    font-family: Arial, sans-serif;
+  }
+  th {
+    background-color: #4CAF50;  /* Green header */
+    color: white;               /* White text */
+    padding: 10px;
+    text-align: center;
+  }
+  td {
+    padding: 8px;
+    text-align: center;
+  }
+  tr:nth-child(even) {
+    background-color: #f2f2f2;  /* alternate row color */
+  }
+</style>
 </head>
 <body>
-<table border="1" align = "center">
+<table border="1" align="center">
   <tr>
     <th>S.no</th>
     <th>Name of The Protocols</th>
@@ -15,8 +36,8 @@ content = '''
   </tr>
   <tr>
     <td>1</td>
-    <td>Application Layer/td>
-    <td>Http,Ftp,DNS</td>
+    <td>Application Layer</td>
+    <td>Http, Ftp, DNS</td>
   </tr>
   <tr>
     <td>2</td>
@@ -28,7 +49,7 @@ content = '''
     <td>Network Layer</td>
     <td>IPV4</td>
   </tr>
-<tr>
+  <tr>
     <td>4</td>
     <td>Link Layer</td>
     <td>Ethernet</td>
@@ -46,6 +67,6 @@ class MyServer(BaseHTTPRequestHandler):
         self.wfile.write(content.encode())
 
 print("This is my webserver") 
-server_address =('',8000)
-httpd = HTTPServer(server_address,MyServer)
+server_address = ('', 8000)
+httpd = HTTPServer(server_address, MyServer)
 httpd.serve_forever()
